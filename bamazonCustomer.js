@@ -70,11 +70,16 @@ var shopping = () => {
                             con.query(`
                                 UPDATE products 
                                 SET stock_quantity = stock_quantity - ${ans.quantity} 
-                                WHERE item_id = ${item["item_id"]}; `, (err, success) => {
+                                WHERE item_id = ${item["item_id"]};`, (err, success) => {
                                     if (err) throw err;
                                     if (ans.quantity>1) {console.log(`Your ${ans.quantity} items are on their way!`) }
                                     else if(ans.quantity<=0) {"You're refund is on it's way."}
                                     else {console.log(`Your ${item["product_name"]} is on it's way!`) };
+                                    con.query(`UPDATE departments
+                                    SET product_sales = products_sales + ${price}
+                                    WHERE department_name = "${item["department_name"]}";`, (err, success) => {
+                                        if (err) throw err;
+                                    })
                                     exit();
                                 })
                         } else { exit() }
