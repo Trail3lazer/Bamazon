@@ -76,7 +76,7 @@ var shopping = () => {
                                     else if(ans.quantity<=0) {"You're refund is on it's way."}
                                     else {console.log(`Your ${item["product_name"]} is on it's way!`) };
                                     con.query(`UPDATE departments
-                                    SET product_sales = products_sales + ${price}
+                                    SET product_sales = product_sales + ${price}
                                     WHERE department_name = "${item["department_name"]}";`, (err, success) => {
                                         if (err) throw err;
                                     })
