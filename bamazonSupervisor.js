@@ -86,7 +86,7 @@ inquirer.prompt([{
                         choices: shortList,
                         name: "department_name"
                     }, {
-                        type: "confirmation",
+                        type: "confirm",
                         message: "Do you really want to pay the demolition crew to take out that part of your store, and then pay hourly for the clean up, all of which could amount to millions or even billions of dollars, depending on if Bamazon gets shut down for infringing on copyright laws?",
                         name: "conf"
                     }
