@@ -1,3 +1,5 @@
+let supervisor = () => {
+
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 var con = mysql.createConnection({
@@ -103,3 +105,9 @@ inquirer.prompt([{
             break;
     }
 }, (err) => { console.log(err) })
+
+}
+
+module.exports = {
+    supervisor: supervisor()
+}

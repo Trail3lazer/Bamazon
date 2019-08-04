@@ -1,4 +1,4 @@
-
+function customer() {
 // Running this application will first display all of the items available for sale. 
 // Include the ids, names, and prices of products for sale.
 var mysql = require("mysql");
@@ -92,9 +92,8 @@ var shopping = () => {
 
 shopping()
 
+};
 
-// -- - - -
-
-// -- * If this activity took you between 8-10 hours, then you've put enough time into this assignment. Feel free to stop here -- unless you want to take on the next challenge.
-
-// -- - - -
+module.exports = {
+    customer: customer()
+};

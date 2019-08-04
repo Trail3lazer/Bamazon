@@ -1,3 +1,4 @@
+let manager = () => {
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 var con = mysql.createConnection({
@@ -190,3 +191,8 @@ const go = () => {
 }
 go()
 
+}
+
+module.exports = {
+    manager: manager()
+}
